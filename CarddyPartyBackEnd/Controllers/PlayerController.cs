@@ -33,7 +33,7 @@ namespace CarddyPartyBackEnd.Controllers
       _db.Players.Add(player);
       await _db.SaveChangesAsync();
 
-      return CreatedAtAction(nameof(GetPlayer), new { id = player.PlayerId }, player);
+      return CreatedAtAction(nameof(GetPlayer), new { id = player.PlayerID }, player);
     }
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeletePlayer(int id)
