@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarddyPartyBackEnd.Migrations
 {
     [DbContext(typeof(CarddyPartyBackEndContext))]
-    [Migration("20210405215120_Second")]
-    partial class Second
+    [Migration("20210405220036_NewInitial")]
+    partial class NewInitial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,12 +28,12 @@ namespace CarddyPartyBackEnd.Migrations
                         .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<int>("PlayerId")
+                    b.Property<int>("PlayerID")
                         .HasColumnType("int");
 
                     b.HasKey("CardId");
 
-                    b.HasIndex("PlayerId");
+                    b.HasIndex("PlayerID");
 
                     b.ToTable("Cards");
 
@@ -42,61 +42,61 @@ namespace CarddyPartyBackEnd.Migrations
                         {
                             CardId = 1,
                             Answer = "Card One",
-                            PlayerId = 1
+                            PlayerID = 1
                         },
                         new
                         {
                             CardId = 2,
                             Answer = "Card Two",
-                            PlayerId = 2
+                            PlayerID = 2
                         },
                         new
                         {
                             CardId = 3,
                             Answer = "Card Three",
-                            PlayerId = 1
+                            PlayerID = 1
                         },
                         new
                         {
                             CardId = 4,
                             Answer = "Card Four",
-                            PlayerId = 2
+                            PlayerID = 2
                         },
                         new
                         {
                             CardId = 5,
                             Answer = "Card Five",
-                            PlayerId = 1
+                            PlayerID = 1
                         },
                         new
                         {
                             CardId = 6,
                             Answer = "Card Six",
-                            PlayerId = 2
+                            PlayerID = 2
                         },
                         new
                         {
                             CardId = 7,
                             Answer = "Card Seven",
-                            PlayerId = 1
+                            PlayerID = 1
                         },
                         new
                         {
                             CardId = 8,
                             Answer = "Card Eight",
-                            PlayerId = 2
+                            PlayerID = 2
                         },
                         new
                         {
                             CardId = 9,
                             Answer = "Card Nine",
-                            PlayerId = 1
+                            PlayerID = 1
                         },
                         new
                         {
                             CardId = 10,
                             Answer = "Card Ten",
-                            PlayerId = 2
+                            PlayerID = 2
                         });
                 });
 
@@ -116,6 +116,32 @@ namespace CarddyPartyBackEnd.Migrations
                     b.HasKey("PlayerID");
 
                     b.ToTable("Players");
+
+                    b.HasData(
+                        new
+                        {
+                            PlayerID = 1,
+                            Name = "P1",
+                            Points = 0
+                        },
+                        new
+                        {
+                            PlayerID = 2,
+                            Name = "P2",
+                            Points = 0
+                        },
+                        new
+                        {
+                            PlayerID = 3,
+                            Name = "P3",
+                            Points = 0
+                        },
+                        new
+                        {
+                            PlayerID = 4,
+                            Name = "P4",
+                            Points = 0
+                        });
                 });
 
             modelBuilder.Entity("CarddyPartyBackEnd.Models.Prompt", b =>
@@ -136,7 +162,7 @@ namespace CarddyPartyBackEnd.Migrations
                 {
                     b.HasOne("CarddyPartyBackEnd.Models.Player", null)
                         .WithMany("Cards")
-                        .HasForeignKey("PlayerId")
+                        .HasForeignKey("PlayerID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

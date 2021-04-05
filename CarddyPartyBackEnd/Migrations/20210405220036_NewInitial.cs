@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CarddyPartyBackEnd.Migrations
 {
-    public partial class Initial : Migration
+    public partial class NewInitial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -41,7 +41,7 @@ namespace CarddyPartyBackEnd.Migrations
                     CardId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Answer = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: false),
-                    PlayerID = table.Column<int>(type: "int", nullable: true)
+                    PlayerID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -51,7 +51,18 @@ namespace CarddyPartyBackEnd.Migrations
                         column: x => x.PlayerID,
                         principalTable: "Players",
                         principalColumn: "PlayerID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Players",
+                columns: new[] { "PlayerID", "Name", "Points" },
+                values: new object[,]
+                {
+                    { 1, "P1", 0 },
+                    { 2, "P2", 0 },
+                    { 3, "P3", 0 },
+                    { 4, "P4", 0 }
                 });
 
             migrationBuilder.InsertData(
@@ -59,16 +70,16 @@ namespace CarddyPartyBackEnd.Migrations
                 columns: new[] { "CardId", "Answer", "PlayerID" },
                 values: new object[,]
                 {
-                    { 1, "Card One", null },
-                    { 2, "Card Two", null },
-                    { 3, "Card Three", null },
-                    { 4, "Card Four", null },
-                    { 5, "Card Five", null },
-                    { 6, "Card Six", null },
-                    { 7, "Card Seven", null },
-                    { 8, "Card Eight", null },
-                    { 9, "Card Nine", null },
-                    { 10, "Card Ten", null }
+                    { 1, "Card One", 1 },
+                    { 3, "Card Three", 1 },
+                    { 5, "Card Five", 1 },
+                    { 7, "Card Seven", 1 },
+                    { 9, "Card Nine", 1 },
+                    { 2, "Card Two", 2 },
+                    { 4, "Card Four", 2 },
+                    { 6, "Card Six", 2 },
+                    { 8, "Card Eight", 2 },
+                    { 10, "Card Ten", 2 }
                 });
 
             migrationBuilder.CreateIndex(

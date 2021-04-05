@@ -8,7 +8,7 @@ namespace CarddyPartyBackEnd.Models
     public int CardId { get; set; }
     [Required]
     public string Answer { get; set; }
-    public int PlayerId { get; set; }
+    public int PlayerID { get; set; }
   }
   
 }
