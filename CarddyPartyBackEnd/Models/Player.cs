@@ -1,5 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace CarddyPartyBackEnd.Models
 {
@@ -17,16 +19,3 @@ namespace CarddyPartyBackEnd.Models
     }
   }
 }
-
-
-  // public class Place
-  // {
-  //   public int PlaceId { get; set; }
-  //   public string Country { get; set; }
-  //   public string City { get; set; }
-
-  //   public virtual ICollection<Review> Reviews { get; set; }
-  //   public Place()
-  //   {
-  //     this.Reviews = new HashSet<Review>();
-  //   }
