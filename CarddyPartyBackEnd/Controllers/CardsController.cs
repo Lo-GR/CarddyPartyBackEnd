@@ -36,6 +36,18 @@ namespace CarddyPartyBackEnd
         }
         return card;
     }
+    [HttpGet("random")]
+    public async Task<ActionResult<Card>> GetRandomCard()
+    {
+      Random rand = new Random();
+      int id = rand.Next(1, _db.Cards.Count());
+      var card = await _db.Cards.FindAsync(id);
+      if (card == null)
+      {
+        return NotFound();
+      }
+      return card;
+    }
     [HttpPost]
     public async Task<ActionResult<Card>> Post(Card card)
     {
