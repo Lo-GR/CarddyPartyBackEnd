@@ -37,6 +37,14 @@ namespace CarddyPartyBackEnd.Models
         new Player { PlayerID = 3, Name = "P3", Points = 0 },
         new Player { PlayerID = 4, Name = "P4", Points = 0 }
       );
+      builder.Entity<Prompt>().HasData(
+        new Prompt { PromptId = 1, Description = "Who was the best President?", Theme = "politics"},
+        new Prompt { PromptId = 2, Description = "Why did the cat cross the road?", Theme = "jokes"},
+        new Prompt { PromptId = 3, Description = "The unintentional best thing about Epicodus", Theme = "epicodus"},
+        new Prompt { PromptId = 4, Description = "Who had the worst scandal?", Theme = "politics"},
+        new Prompt { PromptId = 5, Description = "Why did my dad leave me?", Theme = "jokes"},
+        new Prompt { PromptId = 6, Description = "Epicodus is terrible at", Theme = "epicodus"}
+      );
     }
   }
 }

@@ -2,14 +2,16 @@
 using CarddyPartyBackEnd.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CarddyPartyBackEnd.Migrations
 {
     [DbContext(typeof(CarddyPartyBackEndContext))]
-    partial class CarddyPartyBackEndContextModelSnapshot : ModelSnapshot
+    [Migration("20210406164756_Third")]
+    partial class Third
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
