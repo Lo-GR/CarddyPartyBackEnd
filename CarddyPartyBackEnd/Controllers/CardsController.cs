@@ -26,5 +26,47 @@ namespace CarddyPartyBackEnd
       var query = _db.Cards.AsQueryable();
       return await query.ToListAsync();
     }
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Card>> GetCard(int id)
+    {
+        var card = await _db.Cards.FindAsync(id);
+        if (card == null)
+        {
+            return NotFound();
+        }
+        return card;
+    }
+    [HttpGet("random")]
+    public async Task<ActionResult<Card>> GetRandomCard()
+    {
+      Random rand = new Random();
+      int id = rand.Next(1, _db.Cards.Count());
+      var card = await _db.Cards.FindAsync(id);
+      if (card == null)
+      {
+        return NotFound();
+      }
+      return card;
+    }
+    [HttpPost]
+    public async Task<ActionResult<Card>> Post(Card card)
+    {
+      _db.Cards.Add(card);
+      await _db.SaveChangesAsync();
+
+      return CreatedAtAction(nameof(GetCard), new { id = card.CardId }, card);
+    }
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteCard(int id)
+    {
+      var card = await _db.Cards.FindAsync(id);
+      if (card  == null)
+      {
+        return NotFound();
+      }
+      _db.Cards.Remove(card);
+      await _db.SaveChangesAsync();
+      return NoContent();
+    }
   }
 }

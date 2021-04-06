@@ -10,6 +10,8 @@ using System.Reflection;
 
 namespace CarddyPartyBackEnd.Controllers
 {
+  [Route("api/[controller]")]
+  [ApiController]
   public class PlayersController : ControllerBase
   {
     private readonly CarddyPartyBackEndContext _db;
@@ -17,6 +19,16 @@ namespace CarddyPartyBackEnd.Controllers
     {
       _db = db;
     }
+    [HttpGet]
+      public async Task<ActionResult<IEnumerable<Player>>> Get(string name)
+      {
+        var query = _db.Players.AsQueryable();
+        if (name != null)
+        {
+          query = query.Where(entry => entry.Name == name);
+        }
+        return await query.ToListAsync();
+      }
     [HttpGet("{id}")]
     public async Task<ActionResult<Player>> GetPlayer(int id)
     {
