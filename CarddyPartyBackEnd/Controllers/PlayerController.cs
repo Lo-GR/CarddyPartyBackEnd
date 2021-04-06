@@ -10,6 +10,8 @@ using System.Reflection;
 
 namespace CarddyPartyBackEnd.Controllers
 {
+  [Route("api/[controller]")]
+  [ApiController]
   public class PlayersController : ControllerBase
   {
     private readonly CarddyPartyBackEndContext _db;
