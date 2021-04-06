@@ -57,7 +57,9 @@ namespace CarddyPartyBackEnd
                 options.AddPolicy(name: MyAllowSpecificOrigins,
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:8080");
+                        builder.WithOrigins("http://localhost:8080")
+                        .AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+                        //Above CORS Policies specifically for development purposes
                     });
             });
         }

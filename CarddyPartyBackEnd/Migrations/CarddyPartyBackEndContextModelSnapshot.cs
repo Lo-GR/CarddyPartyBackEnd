@@ -149,11 +149,9 @@ namespace CarddyPartyBackEnd.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Theme")
-
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("PromptId");
@@ -164,38 +162,30 @@ namespace CarddyPartyBackEnd.Migrations
                         new
                         {
                             PromptId = 1,
-
                             Description = "Who was the best President?",
                             Theme = "politics"
                         },
                         new
                         {
                             PromptId = 2,
-
                             Description = "Why did the cat cross the road?",
                             Theme = "jokes"
-
                         },
                         new
                         {
                             PromptId = 3,
-
                             Description = "The unintentional best thing about Epicodus",
                             Theme = "epicodus"
-
                         },
                         new
                         {
                             PromptId = 4,
-
                             Description = "Who had the worst scandal?",
                             Theme = "politics"
-
                         },
                         new
                         {
                             PromptId = 5,
-
                             Description = "Why did my dad leave me?",
                             Theme = "jokes"
                         },
@@ -204,7 +194,6 @@ namespace CarddyPartyBackEnd.Migrations
                             PromptId = 6,
                             Description = "Epicodus is terrible at",
                             Theme = "epicodus"
-
                         });
                 });
 
