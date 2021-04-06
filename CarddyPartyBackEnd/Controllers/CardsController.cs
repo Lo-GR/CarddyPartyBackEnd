@@ -26,5 +26,23 @@ namespace CarddyPartyBackEnd
       var query = _db.Cards.AsQueryable();
       return await query.ToListAsync();
     }
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Card>> GetCard(int id)
+    {
+        var card = await _db.Cards.FindAsync(id);
+        if (card == null)
+        {
+            return NotFound();
+        }
+        return card;
+    }
+    [HttpPost]
+    public async Task<ActionResult<Card>> Post(Card card)
+    {
+      _db.Cards.Add(card);
+      await _db.SaveChangesAsync();
+
+      return CreatedAtAction(nameof(GetCard), new { id = card.CardId }, card);
+    }
   }
 }
