@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -23,6 +24,18 @@ namespace CarddyPartyBackEnd.Controllers
     {
       var query = _db.Prompts.AsQueryable();
       return await query.ToListAsync();
+    }
+    [HttpGet("random")]
+    public async Task<ActionResult<Prompt>> GetRandomPrompt()
+    {
+      Random rand = new Random();
+      int id = rand.Next(1, _db.Prompts.Count());
+      var prompt = await _db.Prompts.FindAsync(id);
+      if (prompt == null)
+      {
+        return NotFound();
+      }
+      return prompt;
     }
     [HttpGet("{id}")]
     public async Task<ActionResult<Prompt>> GetPrompt(int id)
