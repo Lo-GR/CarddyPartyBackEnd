@@ -2,14 +2,16 @@
 using CarddyPartyBackEnd.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CarddyPartyBackEnd.Migrations
 {
     [DbContext(typeof(CarddyPartyBackEndContext))]
-    partial class CarddyPartyBackEndContextModelSnapshot : ModelSnapshot
+    [Migration("20210406164959_Second")]
+    partial class Second
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -149,11 +151,6 @@ namespace CarddyPartyBackEnd.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("Theme")
-
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("PromptId");
@@ -164,47 +161,27 @@ namespace CarddyPartyBackEnd.Migrations
                         new
                         {
                             PromptId = 1,
-
-                            Description = "Who was the best President?",
-                            Theme = "politics"
+                            Description = "This is example 1"
                         },
                         new
                         {
                             PromptId = 2,
-
-                            Description = "Why did the cat cross the road?",
-                            Theme = "jokes"
-
+                            Description = "This is example 2"
                         },
                         new
                         {
                             PromptId = 3,
-
-                            Description = "The unintentional best thing about Epicodus",
-                            Theme = "epicodus"
-
+                            Description = "This is example 3"
                         },
                         new
                         {
                             PromptId = 4,
-
-                            Description = "Who had the worst scandal?",
-                            Theme = "politics"
-
+                            Description = "This is example 4"
                         },
                         new
                         {
                             PromptId = 5,
-
-                            Description = "Why did my dad leave me?",
-                            Theme = "jokes"
-                        },
-                        new
-                        {
-                            PromptId = 6,
-                            Description = "Epicodus is terrible at",
-                            Theme = "epicodus"
-
+                            Description = "This is example 5"
                         });
                 });
 
