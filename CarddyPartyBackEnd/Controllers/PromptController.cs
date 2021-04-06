@@ -18,6 +18,12 @@ namespace CarddyPartyBackEnd.Controllers
     {
       _db = db;
     }
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Prompt>>> Get()
+    {
+      var query = _db.Prompts.AsQueryable();
+      return await query.ToListAsync();
+    }
     [HttpGet("{id}")]
     public async Task<ActionResult<Prompt>> GetPrompt(int id)
     {
