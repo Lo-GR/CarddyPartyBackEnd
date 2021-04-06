@@ -6,6 +6,6 @@ namespace CarddyPartyBackEnd.Models
   {
     public int PromptId { get; set; }
     public string Description { get; set; }
-
+    public string Theme {get; set;}
   }
 }

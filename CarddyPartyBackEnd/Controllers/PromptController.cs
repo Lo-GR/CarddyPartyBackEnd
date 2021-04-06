@@ -20,9 +20,13 @@ namespace CarddyPartyBackEnd.Controllers
       _db = db;
     }
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Prompt>>> Get()
+    public async Task<ActionResult<IEnumerable<Prompt>>> Get(string theme)
     {
       var query = _db.Prompts.AsQueryable();
+      if(theme != null)
+      {
+        query = query.Where(entry => entry.Theme == theme);
+      }
       return await query.ToListAsync();
     }
     [HttpGet("random")]
