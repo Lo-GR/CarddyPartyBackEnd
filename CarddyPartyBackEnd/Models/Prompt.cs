@@ -5,7 +5,7 @@ namespace CarddyPartyBackEnd.Models
   public class Prompt
   {
     public int PromptId { get; set; }
-    public string Desciprtion { get; set; }
+    public string Description { get; set; }
 
   }
 }
