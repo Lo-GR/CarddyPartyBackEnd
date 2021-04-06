@@ -44,5 +44,17 @@ namespace CarddyPartyBackEnd
 
       return CreatedAtAction(nameof(GetCard), new { id = card.CardId }, card);
     }
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteCard(int id)
+    {
+      var card = await _db.Cards.FindAsync(id);
+      if (card  == null)
+      {
+        return NotFound();
+      }
+      _db.Cards.Remove(card);
+      await _db.SaveChangesAsync();
+      return NoContent();
+    }
   }
 }
