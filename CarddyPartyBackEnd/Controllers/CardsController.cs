@@ -28,6 +28,14 @@ namespace CarddyPartyBackEnd.Controllers
       var query = _db.Cards.AsQueryable();
       return await query.ToListAsync();
     }
+    [HttpGet("recent")]
+    public async Task<ActionResult<IEnumerable<Card>>> GetRecent()
+    {
+      int max = _db.Cards.Count();
+      var query = _db.Cards.AsQueryable();
+      query = query.Where(e => e.CardId >= max - 9);
+      return await query.ToListAsync();
+    }
     [HttpGet("{id}")]
     public async Task<ActionResult<Card>> GetCard(int id)
     {
