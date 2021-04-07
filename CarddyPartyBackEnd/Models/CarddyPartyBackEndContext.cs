@@ -49,7 +49,7 @@ namespace CarddyPartyBackEnd.Models
         new Prompt { PromptId = 6, Description = "Epicodus is terrible at", Theme = "epicodus"}
       );
       builder.Entity<Select>().HasData(
-        new Select { SelectId = 1, Player1Card = 5, Player2Card = 4, Player3Card = 8, Player4Card = 3}
+        new Select { SelectId = 1, selectedcard = 6}
       );
     }
   }

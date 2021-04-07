@@ -203,16 +203,7 @@ namespace CarddyPartyBackEnd.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Player1Card")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Player2Card")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Player3Card")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Player4Card")
+                    b.Property<int>("selectedcard")
                         .HasColumnType("int");
 
                     b.HasKey("SelectId");
@@ -223,10 +214,7 @@ namespace CarddyPartyBackEnd.Migrations
                         new
                         {
                             SelectId = 1,
-                            Player1Card = 5,
-                            Player2Card = 4,
-                            Player3Card = 8,
-                            Player4Card = 3
+                            selectedcard = 6
                         });
                 });
 

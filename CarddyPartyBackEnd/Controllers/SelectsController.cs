@@ -27,6 +27,7 @@ namespace CarddyPartyBackEnd.Controllers
       var query = _db.Selects.AsQueryable();
       return await query.ToListAsync();
     }
+    
     [HttpPut("{id}")]
     public async Task<IActionResult> Put(int id, Select select)
     {
@@ -55,6 +56,24 @@ namespace CarddyPartyBackEnd.Controllers
         private bool SelectExists(int id)
     {
       return _db.Selects.Any(prompt => prompt.SelectId == id);
+    }
+    [HttpPost]
+    public async Task<ActionResult<Select>> Post(Select select)
+    {
+      _db.Selects.Add(select);
+      await _db.SaveChangesAsync();
+
+      return CreatedAtAction(nameof(GetS), new { id = select.SelectId }, select);
+    }
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Select>> GetS(int id)
+    {
+        var select = await _db.Selects.FindAsync(id);
+        if (select == null)
+        {
+            return NotFound();
+        }
+        return select;
     }
   }
 }
