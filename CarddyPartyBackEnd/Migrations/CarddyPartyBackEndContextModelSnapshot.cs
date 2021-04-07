@@ -197,6 +197,27 @@ namespace CarddyPartyBackEnd.Migrations
                         });
                 });
 
+            modelBuilder.Entity("CarddyPartyBackEnd.Models.Select", b =>
+                {
+                    b.Property<int>("SelectId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("selectedcard")
+                        .HasColumnType("int");
+
+                    b.HasKey("SelectId");
+
+                    b.ToTable("Selects");
+
+                    b.HasData(
+                        new
+                        {
+                            SelectId = 1,
+                            selectedcard = 6
+                        });
+                });
+
             modelBuilder.Entity("CarddyPartyBackEnd.Models.Card", b =>
                 {
                     b.HasOne("CarddyPartyBackEnd.Models.Player", null)

@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CarddyPartyBackEnd.Models;
-using System.Web.Http.Cors;
+// using System.Web.Http.Cors;
 
-namespace CarddyPartyBackEnd
+namespace CarddyPartyBackEnd.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
@@ -51,7 +51,6 @@ namespace CarddyPartyBackEnd
       return card;
     }
     [HttpPost]
-    [DisableCors]
     public async Task<ActionResult<Card>> Post(Card card)
     {
       _db.Cards.Add(card);

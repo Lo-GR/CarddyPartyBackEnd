@@ -16,6 +16,8 @@ namespace CarddyPartyBackEnd.Models
     public DbSet<Card> Cards { get; set; }
     public DbSet<Prompt> Prompts { get; set; }
 
+    public DbSet<Select> Selects {get; set;}
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
       builder.Entity<Card>().HasData(
@@ -45,6 +47,9 @@ namespace CarddyPartyBackEnd.Models
         new Prompt { PromptId = 4, Description = "Who had the worst scandal?", Theme = "politics"},
         new Prompt { PromptId = 5, Description = "Why did my dad leave me?", Theme = "jokes"},
         new Prompt { PromptId = 6, Description = "Epicodus is terrible at", Theme = "epicodus"}
+      );
+      builder.Entity<Select>().HasData(
+        new Select { SelectId = 1, selectedcard = 6}
       );
     }
   }
