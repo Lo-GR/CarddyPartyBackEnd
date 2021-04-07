@@ -197,6 +197,39 @@ namespace CarddyPartyBackEnd.Migrations
                         });
                 });
 
+            modelBuilder.Entity("CarddyPartyBackEnd.Models.Select", b =>
+                {
+                    b.Property<int>("SelectId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("Player1Card")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Player2Card")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Player3Card")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Player4Card")
+                        .HasColumnType("int");
+
+                    b.HasKey("SelectId");
+
+                    b.ToTable("Selects");
+
+                    b.HasData(
+                        new
+                        {
+                            SelectId = 1,
+                            Player1Card = 5,
+                            Player2Card = 4,
+                            Player3Card = 8,
+                            Player4Card = 3
+                        });
+                });
+
             modelBuilder.Entity("CarddyPartyBackEnd.Models.Card", b =>
                 {
                     b.HasOne("CarddyPartyBackEnd.Models.Player", null)
