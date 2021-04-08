@@ -39,61 +39,25 @@ namespace CarddyPartyBackEnd.Migrations
                         new
                         {
                             CardId = 1,
-                            Answer = "Card One",
+                            Answer = "",
                             PlayerID = 1
                         },
                         new
                         {
                             CardId = 2,
-                            Answer = "Card Two",
+                            Answer = "",
                             PlayerID = 2
                         },
                         new
                         {
                             CardId = 3,
-                            Answer = "Card Three",
+                            Answer = "",
                             PlayerID = 1
                         },
                         new
                         {
                             CardId = 4,
-                            Answer = "Card Four",
-                            PlayerID = 2
-                        },
-                        new
-                        {
-                            CardId = 5,
-                            Answer = "Card Five",
-                            PlayerID = 1
-                        },
-                        new
-                        {
-                            CardId = 6,
-                            Answer = "Card Six",
-                            PlayerID = 2
-                        },
-                        new
-                        {
-                            CardId = 7,
-                            Answer = "Card Seven",
-                            PlayerID = 1
-                        },
-                        new
-                        {
-                            CardId = 8,
-                            Answer = "Card Eight",
-                            PlayerID = 2
-                        },
-                        new
-                        {
-                            CardId = 9,
-                            Answer = "Card Nine",
-                            PlayerID = 1
-                        },
-                        new
-                        {
-                            CardId = 10,
-                            Answer = "Card Ten",
+                            Answer = "",
                             PlayerID = 2
                         });
                 });
@@ -174,7 +138,7 @@ namespace CarddyPartyBackEnd.Migrations
                         new
                         {
                             PromptId = 3,
-                            Description = "The unintentional best thing about Epicodus",
+                            Description = "The unintentional best thing about Epicodus is",
                             Theme = "epicodus"
                         },
                         new
@@ -194,6 +158,120 @@ namespace CarddyPartyBackEnd.Migrations
                             PromptId = 6,
                             Description = "Epicodus is terrible at",
                             Theme = "epicodus"
+                        },
+                        new
+                        {
+                            PromptId = 7,
+                            Description = "Today's stand up at Epicodus was",
+                            Theme = "epicodus"
+                        },
+                        new
+                        {
+                            PromptId = 8,
+                            Description = "My dev group last week was",
+                            Theme = "epicodus"
+                        },
+                        new
+                        {
+                            PromptId = 9,
+                            Description = "It's like Leilani always says: ",
+                            Theme = "epicodus"
+                        },
+                        new
+                        {
+                            PromptId = 10,
+                            Description = "The worst President was",
+                            Theme = "politics"
+                        },
+                        new
+                        {
+                            PromptId = 11,
+                            Description = "If I had the opportunity, I would vote for ___ again",
+                            Theme = "politics"
+                        },
+                        new
+                        {
+                            PromptId = 12,
+                            Description = "The reason flamingos stand on one leg is",
+                            Theme = "jokes"
+                        },
+                        new
+                        {
+                            PromptId = 13,
+                            Description = "A chicken walks into a bar because",
+                            Theme = "jokes"
+                        },
+                        new
+                        {
+                            PromptId = 14,
+                            Description = "6 words or less to make an entire group of people mad",
+                            Theme = "situational"
+                        },
+                        new
+                        {
+                            PromptId = 15,
+                            Description = "The three words I want to hear from any romantic partner",
+                            Theme = "situational"
+                        },
+                        new
+                        {
+                            PromptId = 16,
+                            Description = "And then I told my boss ____ and got fired",
+                            Theme = "situational"
+                        },
+                        new
+                        {
+                            PromptId = 17,
+                            Description = "My mom always told me..",
+                            Theme = "situational"
+                        },
+                        new
+                        {
+                            PromptId = 18,
+                            Description = "Your final words before you're burned as a witch in Salem",
+                            Theme = "situational"
+                        },
+                        new
+                        {
+                            PromptId = 19,
+                            Description = "Fill in the blank: All I want for Christmas is ____",
+                            Theme = "blanks"
+                        },
+                        new
+                        {
+                            PromptId = 20,
+                            Description = "Fill in the blank: Keep the change you filthy _____ ",
+                            Theme = "blanks"
+                        },
+                        new
+                        {
+                            PromptId = 21,
+                            Description = "Fill in the blank: Everywhere the light touches is _____ ",
+                            Theme = "blanks"
+                        },
+                        new
+                        {
+                            PromptId = 22,
+                            Description = "Fill in the blank: I have a feeling we're not ___ anymore ",
+                            Theme = "blanks"
+                        },
+                        new
+                        {
+                            PromptId = 23,
+                            Description = "Fill in the blank: May the ___ be with you ",
+                            Theme = "blanks"
+                        },
+                        new
+                        {
+                            PromptId = 24,
+                            Description = "Fill in the blank: ______, my dear Watson",
+                            Theme = "blanks"
+                        },
+                        new
+                        {
+                            PromptId = 25,
+                            Description = "Fill in the blank: Soylent green is _____",
+                            Theme = "blanks"
                         });
                 });
 
@@ -214,7 +292,22 @@ namespace CarddyPartyBackEnd.Migrations
                         new
                         {
                             SelectId = 1,
-                            selectedcard = 6
+                            selectedcard = 1
+                        },
+                        new
+                        {
+                            SelectId = 2,
+                            selectedcard = 1
+                        },
+                        new
+                        {
+                            SelectId = 3,
+                            selectedcard = 1
+                        },
+                        new
+                        {
+                            SelectId = 4,
+                            selectedcard = 1
                         });
                 });
 
