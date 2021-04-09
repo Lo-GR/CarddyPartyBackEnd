@@ -4,7 +4,7 @@
 
 ## Description
 
-_Server-side installation for Carddy Party. This server maintains the database to store all player cards for the operation of the game._
+_Server-side installation for Carddy Party. This server maintains the database to store all player cards for the operation of the game. This is a backend piece of a full-stack repo. See the front end here: https://github.com/Lo-GR/CarddyPartyFrontEnd_
 
 ------------------------------
 ### <u>Table of Contents</u>
@@ -100,7 +100,7 @@ This server is designed to host the game. Once the server is up and running, do 
 
 ## Known Bugs and Issues
 
-It's unfinished as of the time of this writing, so there might be a few issues.  
+This project is a proof of concept project. There will be multiple 
 
 ## Support and contact details
 
@@ -117,3 +117,9 @@ Y'all add yourselves here
 *  Swashbuckle
 
 ### License Information
+
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+Copyright (c) 2021, Logan Roth, Ash Porter, Dani Renner, Nick Lindau.
+
+Please contact Contributor for further use information or if you would like to make a contribution.
