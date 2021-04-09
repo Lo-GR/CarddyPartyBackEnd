@@ -104,8 +104,9 @@ This project is a proof of concept project. There will be multiple
 
 ## Support and contact details
 
-_Discord: @KirbyPaint#0751_
-Y'all add yourselves here
+_Ash Porter - Discord: @KirbyPaint#0751_
+
+_Logan Roth - diamondintheroth@gmail.com - [GitHub(Lo-GR)](https://github.com/Lo-GR)_
 
 ## Technologies Used
 
